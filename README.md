@@ -9,7 +9,7 @@ Premier League, Fantasy Premier League or Reddit.
 `.github/workflows/update.yml` runs `update.py` every 15 minutes:
 
 1. New comments from both subreddits (`reddit.py`), read-only through Reddit's official API with an approved app.
-   Quotes whose comments were later deleted or removed are taken off the site on the next run.
+   Quotes whose comments were later deleted or removed are taken off the site within the hour.
 2. The players each comment names (`mentions.py`), from the official FPL player list (`fpl.py`).
 3. One question to Jev per player named (`jev.py`): sell, hold or buy on r/FantasyPL; negative, neutral or positive
    on r/PremierLeague; or "not about him".
