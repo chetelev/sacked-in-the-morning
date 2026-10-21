@@ -194,8 +194,9 @@ def main() -> None:
         if comments:
             mark["last"] = max((mark.get("last") or "0", comments[-1]["id"]), key=lambda i: int(i, 36))
 
-    live = fpl.gameweek(int(time.time()), data["deadlines"])
-    prune(books, state_dir, sorted({max(1, live - 1), live}))
+    if time.gmtime().tm_min < 15:   # once an hour is enough, and keeps the run well under Reddit's limits
+        live = fpl.gameweek(int(time.time()), data["deadlines"])
+        prune(books, state_dir, sorted({max(1, live - 1), live}))
     for (sub, gw), saved in books.items():
         path = state_dir / sub / f"gw{gw}.json"
         path.parent.mkdir(parents=True, exist_ok=True)
