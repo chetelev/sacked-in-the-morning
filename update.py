@@ -1,11 +1,13 @@
 """One update: take new comments, find the players they name, ask Jev what each comment says about each of them,
 add the answers to the saved state and write the site's data files.
 
-  python3 update.py                                       new comments from Reddit, both subreddits
-  python3 update.py --archive data/raw/FantasyPL.jsonl --subreddit FantasyPL       an archive download
+  python3 update.py          new comments from Reddit's API (an approved app), both subreddits
+
+Settings come from the environment: JEV_API_KEY, REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USER_AGENT and
+VOTER_KEY, the secret that makes commenter fingerprints impossible to trace back to usernames.
 
 Saved state (the `data` branch on GitHub; a folder here):
-  cursor.json                 per subreddit, the newest comment read ("last") and the first one read live ("first")
+  cursor.json                 per subreddit, the newest comment read ("last")
   <subreddit>/gw<N>.json      per player: each commenter's latest view (one vote per person, by a short fingerprint)
                               and the clearest few comments of each answer
 Site data, written to <site>/data/:
@@ -17,6 +19,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -77,8 +80,9 @@ def book(books: dict, state_dir: Path, sub: str, gw: int) -> dict:
 
 
 def voter(author: str) -> str:
-    """A short fingerprint of the commenter, so repeat posts can be recognised without keeping usernames."""
-    return hashlib.blake2b(author.encode(), digest_size=6).hexdigest()
+    """A short keyed fingerprint of the commenter: repeat posts are recognised, and without the secret key nobody can
+    match a fingerprint to a username."""
+    return hashlib.blake2b(author.encode(), digest_size=6, key=os.environ["VOTER_KEY"].encode()[:64]).hexdigest()
 
 
 def add(entry: dict, answer: str, confidence: float, comment: dict) -> None:
@@ -111,6 +115,22 @@ def write_site(state_dir: Path, site_dir: Path, data: dict) -> None:
     (out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, separators=(",", ":")))
 
 
+def prune(books: dict, state_dir: Path, gws: list) -> None:
+    """Drop saved quotes whose comments were deleted or removed on Reddit since they were read."""
+    for sub in SUBREDDITS:
+        for gw in gws:
+            players = book(books, state_dir, sub, gw)["players"]
+            ids = [c["id"] for e in players.values() for kept in e["top"].values() for c in kept]
+            if not ids:
+                continue
+            alive = reddit.still_there(ids)
+            for e in players.values():
+                for answer, kept in e["top"].items():
+                    e["top"][answer] = [c for c in kept if c["id"] in alive]
+            if len(alive) < len(ids):
+                print(f"r/{sub} gameweek {gw}: {len(ids) - len(alive)} deleted comments taken off the site")
+
+
 def load_fpl(state_dir: Path) -> dict:
     """The official FPL list, saved with the state so one refused request does not stop an update."""
     saved = state_dir / "fpl.json"
@@ -130,14 +150,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--state", default="state", help="folder of the saved state")
     parser.add_argument("--site", default="site", help="folder of the site")
-    parser.add_argument("--archive", help="read comments from this archive download instead of Reddit")
-    parser.add_argument("--subreddit", choices=list(SUBREDDITS), help="the archive's subreddit")
     parser.add_argument("--limit", type=int, help="read at most this many comments per subreddit (for trying it out)")
     args = parser.parse_args()
     if not jev.enabled():
         sys.exit("JEV_API_KEY is not set")
-    if args.archive and not args.subreddit:
-        sys.exit("--archive needs --subreddit")
+    if not os.environ.get("VOTER_KEY"):
+        sys.exit("VOTER_KEY is not set: fingerprints would be traceable to usernames")
 
     state_dir, site_dir = Path(args.state), Path(args.site)
     data = load_fpl(state_dir)
@@ -146,14 +164,9 @@ def main() -> None:
     cursor = json.loads(cursor_path.read_text()) if cursor_path.exists() else {}
     books, failed_any = {}, False
 
-    for sub in [args.subreddit] if args.archive else list(SUBREDDITS):
+    for sub in SUBREDDITS:
         mark = cursor.setdefault(sub, {})
-        if args.archive:   # the archive fills in what came before the first comment read live
-            comments = [c for c in reddit.from_archive(args.archive, sub) if not mark.get("first") or int(c["id"], 36) < int(mark["first"], 36)]
-        else:
-            comments = reddit.new_comments(sub, mark.get("last", ""))
-            if comments and not mark.get("first"):
-                mark["first"] = comments[0]["id"]
+        comments = reddit.new_comments(sub, mark.get("last", ""))
         comments = comments[:args.limit] if args.limit else comments
 
         work = []
@@ -178,9 +191,11 @@ def main() -> None:
             for pid, answer, confidence in result or []:
                 if answer != "elsewhere":
                     add(players.setdefault(str(pid), {"votes": {}, "top": {}}), answer, confidence, comment)
-        if comments and (not args.archive or not mark.get("last")):
+        if comments:
             mark["last"] = max((mark.get("last") or "0", comments[-1]["id"]), key=lambda i: int(i, 36))
 
+    live = fpl.gameweek(int(time.time()), data["deadlines"])
+    prune(books, state_dir, sorted({max(1, live - 1), live}))
     for (sub, gw), saved in books.items():
         path = state_dir / sub / f"gw{gw}.json"
         path.parent.mkdir(parents=True, exist_ok=True)

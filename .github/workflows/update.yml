@@ -40,6 +40,7 @@ jobs:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+          VOTER_KEY: ${{ secrets.VOTER_KEY }}
         run: python update.py --state state --site site
 
       - name: Save the counts

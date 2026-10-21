@@ -8,8 +8,8 @@ Premier League, Fantasy Premier League or Reddit.
 
 `.github/workflows/update.yml` runs `update.py` every 15 minutes:
 
-1. New comments from both subreddits (`reddit.py`): Reddit's official API when the app keys are set, otherwise the
-   Arctic Shift archive, which runs one to two hours behind.
+1. New comments from both subreddits (`reddit.py`), read-only through Reddit's official API with an approved app.
+   Quotes whose comments were later deleted or removed are taken off the site on the next run.
 2. The players each comment names (`mentions.py`), from the official FPL player list (`fpl.py`).
 3. One question to Jev per player named (`jev.py`): sell, hold or buy on r/FantasyPL; negative, neutral or positive
    on r/PremierLeague; or "not about him".
@@ -23,17 +23,18 @@ A comment counts toward the gameweek whose FPL deadline comes next.
 | Secret | What it is |
 |---|---|
 | `JEV_API_KEY` | TypeSafe System One key |
-| `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` | a Reddit "script" app (reddit.com/prefs/apps); optional, without them the archive is used |
+| `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` | a Reddit "script" app (reddit.com/prefs/apps), approved for API access |
 | `REDDIT_USER_AGENT` | e.g. `linux:sacked-in-the-morning:0.1 (by /u/yourname)` |
+| `VOTER_KEY` | a random secret; commenters are counted by a fingerprint keyed with it, so no fingerprint can be traced to a username |
 
 ## Running it here
 
 ```
-JEV_API_KEY=... python3 update.py --state state --site site
+JEV_API_KEY=... REDDIT_CLIENT_ID=... REDDIT_CLIENT_SECRET=... VOTER_KEY=... python3 update.py --state state --site site
 python3 -m http.server -d site 8000
 ```
 
-`scripts/download.py` downloads a subreddit's past comments from the archive; `update.py --archive <file> --subreddit <name>`
-adds them to the counts, for the part of the season before the first live run.
+Reddit's data is used only as its Responsible Builder Policy allows: read-only, two subreddits, no usernames published,
+nothing sold or used to train models, deleted comments removed. The counts start from the first run with API access.
 
 Design: `PRODUCT.md` (what it is for) and `DESIGN.md` (the visual system).
