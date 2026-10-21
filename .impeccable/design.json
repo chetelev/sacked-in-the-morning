@@ -1,0 +1,560 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T17:13:09Z",
+  "title": "Design System: Sacked in the Morning",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "cssVar": "--paper",
+        "usage": "Page ground; fill of controls, tagline and mini back pages.",
+        "canonical": "#eef0f1",
+        "oklch": "oklch(95.4% 0.003 228.8)",
+        "tonalRamp": [
+          "oklch(15% 0.003 228.8)",
+          "oklch(26% 0.003 228.8)",
+          "oklch(38% 0.003 228.8)",
+          "oklch(49% 0.003 228.8)",
+          "oklch(61% 0.003 228.8)",
+          "oklch(72% 0.003 228.8)",
+          "oklch(84% 0.003 228.8)",
+          "oklch(95% 0.003 228.8)"
+        ]
+      },
+      "paper-2": {
+        "role": "neutral",
+        "displayName": "Newsprint Shade",
+        "cssVar": "--paper-2",
+        "usage": "Second paper: map club boxes, +N more box, kit shirt well, segment hover, scrollbar track.",
+        "canonical": "#dfe3e5",
+        "oklch": "oklch(91.3% 0.005 228.8)",
+        "tonalRamp": [
+          "oklch(15% 0.005 228.8)",
+          "oklch(26% 0.005 228.8)",
+          "oklch(38% 0.005 228.8)",
+          "oklch(49% 0.005 228.8)",
+          "oklch(61% 0.005 228.8)",
+          "oklch(72% 0.005 228.8)",
+          "oklch(84% 0.005 228.8)",
+          "oklch(95% 0.005 228.8)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "cssVar": "--white",
+        "usage": "Tappable player boxes (map, kit cards), search field; type on red, green and ink.",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 0.0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0.0)",
+          "oklch(26% 0.000 0.0)",
+          "oklch(38% 0.000 0.0)",
+          "oklch(49% 0.000 0.0)",
+          "oklch(61% 0.000 0.0)",
+          "oklch(72% 0.000 0.0)",
+          "oklch(84% 0.000 0.0)",
+          "oklch(95% 0.000 0.0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "cssVar": "--ink",
+        "usage": "All type, every rule, section bar, pressed segment, button.",
+        "canonical": "#111111",
+        "oklch": "oklch(17.8% 0.000 0.0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0.0)",
+          "oklch(26% 0.000 0.0)",
+          "oklch(38% 0.000 0.0)",
+          "oklch(49% 0.000 0.0)",
+          "oklch(61% 0.000 0.0)",
+          "oklch(72% 0.000 0.0)",
+          "oklch(84% 0.000 0.0)",
+          "oklch(95% 0.000 0.0)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "cssVar": "--ink-2",
+        "usage": "Notes, strap meta, footer; neutral verdict as text.",
+        "canonical": "#3a3a37",
+        "oklch": "oklch(34.7% 0.005 106.7)",
+        "tonalRamp": [
+          "oklch(15% 0.005 106.7)",
+          "oklch(26% 0.005 106.7)",
+          "oklch(38% 0.005 106.7)",
+          "oklch(49% 0.005 106.7)",
+          "oklch(61% 0.005 106.7)",
+          "oklch(72% 0.005 106.7)",
+          "oklch(84% 0.005 106.7)",
+          "oklch(95% 0.005 106.7)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "cssVar": "--muted",
+        "usage": "Inactive tabs, comment sources, counts under values, +N more label.",
+        "canonical": "#5f5f5a",
+        "oklch": "oklch(48.4% 0.008 106.7)",
+        "tonalRamp": [
+          "oklch(15% 0.008 106.7)",
+          "oklch(26% 0.008 106.7)",
+          "oklch(38% 0.008 106.7)",
+          "oklch(49% 0.008 106.7)",
+          "oklch(61% 0.008 106.7)",
+          "oklch(72% 0.008 106.7)",
+          "oklch(84% 0.008 106.7)",
+          "oklch(95% 0.008 106.7)"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "cssVar": "--hair",
+        "usage": "1px dividers between table rows and comments; empty form-guide week.",
+        "canonical": "#c3c8cb",
+        "oklch": "oklch(83.0% 0.007 233.7)",
+        "tonalRamp": [
+          "oklch(15% 0.007 233.7)",
+          "oklch(26% 0.007 233.7)",
+          "oklch(38% 0.007 233.7)",
+          "oklch(49% 0.007 233.7)",
+          "oklch(61% 0.007 233.7)",
+          "oklch(72% 0.007 233.7)",
+          "oklch(84% 0.007 233.7)",
+          "oklch(95% 0.007 233.7)"
+        ]
+      },
+      "red": {
+        "role": "primary",
+        "displayName": "Tabloid Red",
+        "cssVar": "--red",
+        "usage": "Masthead band and every hated or sell fill.",
+        "canonical": "#d7141a",
+        "oklch": "oklch(55.8% 0.220 27.6)",
+        "tonalRamp": [
+          "oklch(15% 0.220 27.6)",
+          "oklch(26% 0.220 27.6)",
+          "oklch(38% 0.220 27.6)",
+          "oklch(49% 0.220 27.6)",
+          "oklch(61% 0.220 27.6)",
+          "oklch(72% 0.220 27.6)",
+          "oklch(84% 0.220 27.6)",
+          "oklch(95% 0.220 27.6)"
+        ]
+      },
+      "red-ink": {
+        "role": "primary",
+        "displayName": "Verdict Red Ink",
+        "cssVar": "--red-ink",
+        "usage": "Hated or sell as text on paper (figures, verdict words).",
+        "canonical": "#b80f15",
+        "oklch": "oklch(49.7% 0.196 27.5)",
+        "tonalRamp": [
+          "oklch(15% 0.196 27.5)",
+          "oklch(26% 0.196 27.5)",
+          "oklch(38% 0.196 27.5)",
+          "oklch(49% 0.196 27.5)",
+          "oklch(61% 0.196 27.5)",
+          "oklch(72% 0.196 27.5)",
+          "oklch(84% 0.196 27.5)",
+          "oklch(95% 0.196 27.5)"
+        ]
+      },
+      "green": {
+        "role": "secondary",
+        "displayName": "Pitch Green",
+        "cssVar": "--green",
+        "usage": "Loved and buy, as fill and as text.",
+        "canonical": "#1c7a38",
+        "oklch": "oklch(51.1% 0.132 148.7)",
+        "tonalRamp": [
+          "oklch(15% 0.132 148.7)",
+          "oklch(26% 0.132 148.7)",
+          "oklch(38% 0.132 148.7)",
+          "oklch(49% 0.132 148.7)",
+          "oklch(61% 0.132 148.7)",
+          "oklch(72% 0.132 148.7)",
+          "oklch(84% 0.132 148.7)",
+          "oklch(95% 0.132 148.7)"
+        ]
+      },
+      "yellow": {
+        "role": "tertiary",
+        "displayName": "Flash Yellow",
+        "cssVar": "--yellow",
+        "usage": "Hold fill, LIVE flash, and the state highlighter (focus, selection, current section, hover fill).",
+        "canonical": "#ffd400",
+        "oklch": "oklch(88.1% 0.181 94.0)",
+        "tonalRamp": [
+          "oklch(15% 0.181 94.0)",
+          "oklch(26% 0.181 94.0)",
+          "oklch(38% 0.181 94.0)",
+          "oklch(49% 0.181 94.0)",
+          "oklch(61% 0.181 94.0)",
+          "oklch(72% 0.181 94.0)",
+          "oklch(84% 0.181 94.0)",
+          "oklch(95% 0.181 94.0)"
+        ]
+      },
+      "neutral": {
+        "role": "neutral",
+        "displayName": "Neutral Grey",
+        "cssVar": "--neutral",
+        "usage": "Neutral verdict fill, with ink type.",
+        "canonical": "#8f8f88",
+        "oklch": "oklch(64.8% 0.010 106.7)",
+        "tonalRamp": [
+          "oklch(15% 0.010 106.7)",
+          "oklch(26% 0.010 106.7)",
+          "oklch(38% 0.010 106.7)",
+          "oklch(49% 0.010 106.7)",
+          "oklch(61% 0.010 106.7)",
+          "oklch(72% 0.010 106.7)",
+          "oklch(84% 0.010 106.7)",
+          "oklch(95% 0.010 106.7)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "masthead": {
+        "displayName": "Masthead",
+        "purpose": "The name on the red band; never wraps."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The splash headline only; fitted down to 44px."
+      },
+      "display-name": {
+        "displayName": "Display Name",
+        "purpose": "Player and club page names over the halftone print; fitted down to 36px."
+      },
+      "page-head": {
+        "displayName": "Page Head",
+        "purpose": "Heads of Clubs, Archive and Team; balanced."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "The splash share, in the verdict's text ink."
+      },
+      "figure-verdict": {
+        "displayName": "Verdict Figure",
+        "purpose": "A player's per-subreddit verdict, in the verdict's text ink."
+      },
+      "section": {
+        "displayName": "Section Head",
+        "purpose": "Section heads under a 4px rule."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Inside-page straps (archive minis at 30px/0.9)."
+      },
+      "tab": {
+        "displayName": "Tab",
+        "purpose": "Table tabs; 18px on phones."
+      },
+      "name-box": {
+        "displayName": "Name Box",
+        "purpose": "Surnames in club-map boxes, fitted 9-26px."
+      },
+      "deck": {
+        "displayName": "Deck",
+        "purpose": "The one bold line under the splash, max 30ch."
+      },
+      "page-deck": {
+        "displayName": "Page Deck",
+        "purpose": "Bold line under a page head, max 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; tabular numerals throughout."
+      },
+      "quote": {
+        "displayName": "Quote",
+        "purpose": "Italic. A fan's comment in curly quotes, max 62ch."
+      },
+      "row-name": {
+        "displayName": "Row Name",
+        "purpose": "Player names in the table and club lists."
+      },
+      "note": {
+        "displayName": "Note",
+        "purpose": "Method notes and the footer, soft ink, max 62-70ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase. Strap, bylines, pills, section bar, sources, button, select."
+      },
+      "legend": {
+        "displayName": "Legend",
+        "purpose": "Split-bar legends on the player page, sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "paper-knockout",
+        "value": "0 0 2px var(--paper), 0 0 7px var(--paper)",
+        "property": "text-shadow",
+        "purpose": "Only on display type over a halftone print; keeps letters clean of dots. Not depth."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink)",
+        "property": "outline + box-shadow",
+        "purpose": "Every focusable element; yellow ring framed in ink."
+      },
+      {
+        "name": "current-section",
+        "value": "inset 0 3px 0 var(--yellow)",
+        "property": "box-shadow",
+        "purpose": "3px yellow top rule on the current link in the section bar."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ink-in",
+        "value": "1100ms cubic-bezier(.16, 1, .3, 1) both; halftone circles grow from r .12px",
+        "purpose": "The live back page's halftone print, on its first render only, inside prefers-reduced-motion: no-preference. The system's one authored motion; everything else is instant."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-tight",
+        "value": "max-width: 600px",
+        "purpose": "Table bar drops under the name, tabs 18px; club map switches to the tall phone layout below 600px of map width."
+      },
+      {
+        "name": "pair",
+        "value": "min-width: 700px",
+        "purpose": "Per-subreddit verdicts pair up; archive goes to 3 columns."
+      },
+      {
+        "name": "desktop",
+        "value": "min-width: 900px",
+        "purpose": "Section bar becomes sticky top; splash and straps sit 2fr/1fr with a 2px column rule."
+      },
+      {
+        "name": "wide",
+        "value": "min-width: 1000px",
+        "purpose": "Archive goes to 4 columns."
+      }
+    ],
+    "rules": [
+      {
+        "name": "page-rule",
+        "value": "4px solid var(--ink)",
+        "purpose": "Between page parts: under the strap, splash, profile head; above section heads and the footer; pitch frame."
+      },
+      {
+        "name": "box-rule",
+        "value": "2px solid var(--ink)",
+        "purpose": "Boxes and controls: map clubs, mini back pages, kit cards, segments, select, search, tagline; desktop column rule."
+      },
+      {
+        "name": "strap-rule",
+        "value": "1px solid var(--ink)",
+        "purpose": "Under inside straps, verdict boxes and the tab row."
+      },
+      {
+        "name": "hairline",
+        "value": "1px solid var(--hair)",
+        "purpose": "Between table rows and between comments."
+      }
+    ],
+    "halftone": {
+      "cell": "2.3 units in a 64-unit jersey",
+      "dotRadius": ".82",
+      "vignette": "radialGradient cx .62 cy .45 r .72, opaque to 30%",
+      "opacity": ".55 behind page heads, .5 on archive minis",
+      "colour": "club home colour; trim colour when the shirt is near white",
+      "pitchField": "radial-gradient(circle, rgba(17,17,17,.16) 1.1px, transparent 1.5px) 0 0 / 7px 7px"
+    },
+    "fonts": {
+      "source": "site/fonts/fonts.css (self-hosted, SIL OFL 1.1, latin + latin-ext)",
+      "faces": [
+        "Anton 400",
+        "Archivo Narrow 500, 700",
+        "Source Serif 4 400, 700, italic 400"
+      ],
+      "cssVars": {
+        "--f-head": "Anton",
+        "--f-body": "Source Serif 4",
+        "--f-label": "Archivo Narrow"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Masthead and LIVE flash",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "Red band with the name, the tilted yellow LIVE sticker, and the strap over a 4px rule. Top of every page.",
+      "html": "<header class=\"ds-mast\"><a class=\"ds-mast-name\" href=\"#\">Sacked in the Morning</a><span class=\"ds-flash\">Live · GW8</span></header><div class=\"ds-strap\"><span>r/PremierLeague · r/FantasyPL</span><span>Updated 53 min ago</span></div>",
+      "css": ".ds-mast { background: var(--red); color: var(--white); display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 14px 9px; } .ds-mast-name { font: 400 clamp(23px, 6.8vw, 46px)/1 var(--f-head); text-transform: uppercase; letter-spacing: .01em; color: inherit; text-decoration: none; white-space: nowrap; } .ds-mast-name:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); } .ds-flash { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; background: var(--yellow); color: var(--ink); padding: 6px 8px; transform: rotate(3deg); white-space: nowrap; } .ds-flash::before { content: \"\"; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--red); margin-right: 6px; vertical-align: 1px; } .ds-strap { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; display: flex; justify-content: space-between; gap: 12px; padding: 8px 14px; border-bottom: 4px solid var(--ink); background: var(--paper); color: var(--ink); }"
+    },
+    {
+      "name": "Section bar",
+      "kind": "nav",
+      "refersTo": "section-bar",
+      "description": "Black bar of the four sections; current in yellow with a 3px top rule. Fixed to the bottom on phones, sticky top from 900px.",
+      "html": "<nav class=\"ds-sections\" aria-label=\"Sections\"><a href=\"#\" aria-current=\"page\">Back page</a><a href=\"#\">Clubs</a><a href=\"#\">Archive</a><a href=\"#\">Team</a></nav>",
+      "css": ".ds-sections { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; background: var(--ink); display: grid; grid-template-columns: repeat(4, 1fr); } .ds-sections a { color: var(--white); text-decoration: none; text-align: center; padding: 16px 2px 17px; } .ds-sections a[aria-current=\"page\"] { color: var(--yellow); box-shadow: inset 0 3px 0 var(--yellow); } .ds-sections a:hover { color: var(--yellow); } .ds-sections a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    },
+    {
+      "name": "Verdict pills",
+      "kind": "chip",
+      "refersTo": "pill-hated",
+      "description": "Solid verdict fills, square, label caps. Red hated/sell, grey neutral, yellow hold, green loved/buy. Read-only.",
+      "html": "<div class=\"ds-pills\"><span class=\"ds-pill r\">Hated</span><span class=\"ds-pill g\">Neutral</span><span class=\"ds-pill gr\">Loved</span><span class=\"ds-pill r\">Sell</span><span class=\"ds-pill y\">Hold</span><span class=\"ds-pill gr\">Buy</span></div>",
+      "css": ".ds-pills { display: flex; flex-wrap: wrap; gap: 8px; } .ds-pill { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; display: inline-block; padding: 6px 8px; white-space: nowrap; } .ds-pill.r { background: var(--red); color: var(--white); } .ds-pill.g { background: var(--neutral); color: var(--ink); } .ds-pill.y { background: var(--yellow); color: var(--ink); } .ds-pill.gr { background: var(--green); color: var(--white); }"
+    },
+    {
+      "name": "Verdict split bar",
+      "kind": "custom",
+      "refersTo": "split-bar",
+      "description": "Flat verdict segments 2px apart, 10px tall, with the player-page legend. A printed ruling, not a meter.",
+      "html": "<div class=\"ds-split\" role=\"img\" aria-label=\"45% negative, 39% neutral, 16% positive\"><i class=\"r\" style=\"flex:.45\"></i><i class=\"g\" style=\"flex:.39\"></i><i class=\"gr\" style=\"flex:.16\"></i></div><div class=\"ds-legend\"><span class=\"r\">Negative 45%</span><span class=\"g\">Neutral 39%</span><span class=\"gr\">Positive 16%</span></div>",
+      "css": ".ds-split { display: flex; gap: 2px; height: 10px; } .ds-split i { min-width: 2px; } .ds-split .r { background: var(--red); } .ds-split .g { background: var(--neutral); } .ds-split .y { background: var(--yellow); } .ds-split .gr { background: var(--green); } .ds-legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 8px; font: 500 14px/1.3 var(--f-label); color: var(--ink); } .ds-legend span::before { content: \"\"; display: inline-block; width: 10px; height: 10px; margin-right: 6px; vertical-align: -1px; } .ds-legend .r::before { background: var(--red); } .ds-legend .g::before { background: var(--neutral); } .ds-legend .gr::before { background: var(--green); }"
+    },
+    {
+      "name": "Splash",
+      "kind": "custom",
+      "refersTo": "figure-hated",
+      "description": "The back page lead: pun headline over the club's halftone jersey print, byline under, deck, verdict figure with its comment count, split bar, 4px rule.",
+      "html": "<article class=\"ds-splash\"><svg class=\"ds-halftone\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><defs><pattern id=\"ds-d1\" width=\"2.3\" height=\"2.3\" patternUnits=\"userSpaceOnUse\"><circle cx=\"1.15\" cy=\"1.15\" r=\".82\" fill=\"#da291c\"/></pattern><radialGradient id=\"ds-g1\" cx=\".62\" cy=\".45\" r=\".72\"><stop offset=\".3\" stop-color=\"#fff\"/><stop offset=\"1\" stop-color=\"#fff\" stop-opacity=\"0\"/></radialGradient><mask id=\"ds-m1\"><rect width=\"64\" height=\"64\" fill=\"url(#ds-g1)\"/></mask></defs><path d=\"M20 8 12 12 4 24 12 29 16 23V58q16 3 32 0V23l4 6 8-5-8-12-8-4q-6 6-12 6T20 8Z\" fill=\"url(#ds-d1)\" mask=\"url(#ds-m1)\"/></svg><h1><a href=\"#\"><em>Mbeumo</em> slaughtered</a></h1><p class=\"ds-byline\">Verdict of r/PremierLeague · 314 comments · Gameweek 8</p><p class=\"ds-deck\">Midfielder slated as the sub turns on him.</p><div class=\"ds-figure\"><b>85%</b><span>negative<br>of 314 comments</span></div><div class=\"ds-split\" role=\"img\" aria-label=\"85% negative, 9% neutral, 6% positive\"><i class=\"r\" style=\"flex:.85\"></i><i class=\"g\" style=\"flex:.09\"></i><i class=\"gr\" style=\"flex:.06\"></i></div></article>",
+      "css": ".ds-split { display: flex; gap: 2px; height: 10px; } .ds-split i { min-width: 2px; } .ds-split .r { background: var(--red); } .ds-split .g { background: var(--neutral); } .ds-split .y { background: var(--yellow); } .ds-split .gr { background: var(--green); } .ds-splash { position: relative; overflow: hidden; padding-bottom: 20px; border-bottom: 4px solid var(--ink); background: var(--paper); color: var(--ink); } .ds-splash .ds-halftone { position: absolute; z-index: 1; right: -24px; top: 0; width: max(260px, 62%); max-width: 460px; opacity: .55; pointer-events: none; } .ds-splash h1 { position: relative; z-index: 2; margin: 4px 0 0; font: 400 clamp(64px, 23vw, 136px)/.86 var(--f-head); text-transform: uppercase; letter-spacing: -.01em; text-shadow: 0 0 2px var(--paper), 0 0 7px var(--paper); } .ds-splash h1 a { color: inherit; text-decoration: none; } .ds-splash h1 a:hover { text-decoration: underline; text-decoration-thickness: 5px; text-underline-offset: 8px; } .ds-splash h1 a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); } .ds-splash h1 em { font-style: normal; color: var(--red-ink); } .ds-byline { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; position: relative; z-index: 2; margin: 14px 0 0; } .ds-deck { position: relative; z-index: 2; font: 700 20px/1.3 var(--f-body); margin: 8px 0 0; max-width: 30ch; } .ds-figure { position: relative; z-index: 2; display: flex; align-items: baseline; gap: 10px; margin-top: 16px; } .ds-figure b { font: 400 80px/.9 var(--f-head); color: var(--red-ink); } .ds-figure span { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; } .ds-splash .ds-split { position: relative; z-index: 2; margin-top: 14px; }"
+    },
+    {
+      "name": "Inside strap",
+      "kind": "card",
+      "refersTo": "inside-strap",
+      "description": "An inside-page verdict: plain jersey, pun headline, meta line with the count, pill. Ruled underneath, never boxed.",
+      "html": "<a class=\"ds-strap-item\" href=\"#\"><svg class=\"ds-shirt\" width=\"34\" height=\"34\" viewBox=\"0 0 64 64\" aria-hidden=\"true\"><path d=\"M20 8 12 12 4 24 12 29 16 23V58q16 3 32 0V23l4 6 8-5-8-12-8-4q-6 6-12 6T20 8Z\" fill=\"#e30613\"/><path d=\"M20 8 12 12 4 24 12 29 16 23V12ZM44 8l8 4 8 12-8 5-4-6V12Z\" fill=\"#e30613\"/><path d=\"M4 24 12 29M60 24 52 29\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3.2\"/><path d=\"M20 8q6 6 12 6t12-6\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3\"/><path d=\"M20 8 12 12 4 24 12 29 16 23V58q16 3 32 0V23l4 6 8-5-8-12-8-4q-6 6-12 6T20 8Z\" fill=\"none\" stroke=\"rgba(0,0,0,.6)\" stroke-width=\"1\" stroke-linejoin=\"round\"/></svg><h2>Rice? On your bike</h2><p>r/FantasyPL · 85% sell · 488 comments</p><span class=\"ds-pill r\">Sell</span></a>",
+      "css": ".ds-strap-item { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--ink); color: var(--ink); text-decoration: none; } .ds-strap-item .ds-shirt { grid-row: 1 / span 2; } .ds-strap-item h2 { margin: 0; font: 400 27px/.95 var(--f-head); text-transform: uppercase; } .ds-strap-item p { margin: 0; grid-column: 2; font: 400 14px/1.35 var(--f-body); color: var(--ink-2); } .ds-strap-item .ds-pill { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; grid-column: 3; grid-row: 1 / span 2; align-self: start; padding: 6px 8px; background: var(--red); color: var(--white); } .ds-strap-item:hover h2 { text-decoration: underline; text-decoration-thickness: 3px; } .ds-strap-item:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    },
+    {
+      "name": "Comment",
+      "kind": "custom",
+      "refersTo": "comment-quote",
+      "description": "The proof behind a verdict: the fan's words in italic serif, then pill, source and the link to Reddit.",
+      "html": "<figure class=\"ds-quote\"><blockquote>Another shocker from him. Bench him.</blockquote><figcaption><span class=\"ds-pill r\">Hated</span><span>r/PremierLeague · 18 Oct</span><a href=\"#\">Read on Reddit</a></figcaption></figure>",
+      "css": ".ds-quote { margin: 0; padding: 16px 0; border-bottom: 1px solid var(--hair); color: var(--ink); } .ds-quote blockquote { margin: 0; font: italic 400 19px/1.45 var(--f-body); max-width: 62ch; } .ds-quote blockquote::before { content: \"\\201C\"; } .ds-quote blockquote::after { content: \"\\201D\"; } .ds-quote figcaption { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; margin-top: 10px; color: var(--muted); } .ds-quote .ds-pill { padding: 6px 8px; background: var(--red); color: var(--white); } .ds-quote a { color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 3px; } .ds-quote a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    },
+    {
+      "name": "Table controls",
+      "kind": "input",
+      "refersTo": "segment",
+      "description": "Subreddit switch, period select and player search: square, 2px ink borders, ink when pressed, yellow focus ring.",
+      "html": "<div class=\"ds-controls\"><div class=\"ds-seg\" role=\"group\" aria-label=\"Subreddit\"><button type=\"button\" aria-pressed=\"true\">r/PremierLeague</button><button type=\"button\" aria-pressed=\"false\">r/FantasyPL</button></div><select class=\"ds-select\" aria-label=\"Period\"><option>Gameweek 8 (live)</option><option>Season so far</option></select><input class=\"ds-find\" type=\"search\" placeholder=\"Find a player\" aria-label=\"Find a player\"></div>",
+      "css": ".ds-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; } .ds-seg { display: inline-flex; border: 2px solid var(--ink); background: var(--paper); } .ds-seg button { font: 700 12px/1.3 var(--f-label); color: var(--ink); border: 0; background: none; padding: 9px 10px 8px; cursor: pointer; } .ds-seg button + button { border-left: 2px solid var(--ink); } .ds-seg button[aria-pressed=\"true\"] { background: var(--ink); color: var(--white); } .ds-seg button:hover:not([aria-pressed=\"true\"]) { background: var(--paper-2); } .ds-select { font: 700 13px/1 var(--f-label); text-transform: uppercase; letter-spacing: .05em; color: var(--ink); border: 2px solid var(--ink); border-radius: 0; background: var(--paper) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23111' stroke-width='2'/%3E%3C/svg%3E\") no-repeat right 9px center; padding: 9px 30px 8px 10px; appearance: none; cursor: pointer; } .ds-find { font: 400 16px/1 var(--f-body); color: var(--ink); border: 2px solid var(--ink); border-radius: 0; background: var(--white); padding: 9px 10px; width: 200px; } .ds-seg button:focus-visible, .ds-select:focus-visible, .ds-find:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    },
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The only button: ink fill, white label caps, square. Show all, Try again.",
+      "html": "<button type=\"button\" class=\"ds-btn\">Show all 215</button>",
+      "css": ".ds-btn { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; border: 2px solid var(--ink); background: var(--ink); color: var(--white); padding: 10px 14px 9px; border-radius: 0; cursor: pointer; } .ds-btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    },
+    {
+      "name": "Club map box",
+      "kind": "custom",
+      "refersTo": "map-name-box",
+      "description": "One club on the map: home-colour band, the most-discussed players as fitted name boxes with their verdict, the rest folded into a quiet +N more box.",
+      "html": "<div class=\"ds-club\"><a class=\"ds-club-head\" href=\"#\" style=\"--club:#da291c;--club-ink:#ffffff\"><span>Man Utd</span><span>2,823</span></a><div class=\"ds-club-grid\"><a class=\"ds-card\" href=\"#\"><b>Šeško</b><span class=\"v r\">Hated 35%</span></a><a class=\"ds-card\" href=\"#\"><b>Mbeumo</b><span class=\"v r\">Hated 85%</span></a><a class=\"ds-card\" href=\"#\"><b>Fernandes</b><span class=\"v r\">Hated 45%</span></a><a class=\"ds-card\" href=\"#\"><b>Tielemans</b><span class=\"v gr\">Loved 48%</span></a><a class=\"ds-rest\" href=\"#\">+11 more</a></div></div>",
+      "css": ".ds-club { border: 2px solid var(--ink); background: var(--paper-2); width: 280px; } .ds-club-head { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; display: flex; justify-content: space-between; gap: 6px; align-items: center; height: 22px; padding: 0 6px; background: var(--club); color: var(--club-ink); border-bottom: 2px solid var(--ink); text-decoration: none; white-space: nowrap; } .ds-club-head:hover span:first-child { text-decoration: underline; } .ds-club-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; padding: 4px; } .ds-card { display: grid; align-content: start; gap: 2px; padding: 6px 7px; min-height: 58px; background: var(--white); color: var(--ink); text-decoration: none; } .ds-card b { font: 400 20px/1.2 var(--f-head); text-transform: uppercase; white-space: nowrap; } .ds-card .v { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; } .ds-card .v.r { color: var(--red-ink); } .ds-card .v.gr { color: var(--green); } .ds-card:hover { background: var(--yellow); } .ds-rest { font: 700 12px/1.3 var(--f-label); text-transform: uppercase; letter-spacing: .06em; display: grid; place-items: center; color: var(--muted); text-decoration: none; } .ds-rest:hover { background: var(--yellow); color: var(--ink); } .ds-club a:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; box-shadow: 0 0 0 5px var(--ink); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Back Page",
+    "overview": "**Creative North Star: \"The Back Page\"**\n\nEvery gameweek is printed as a tabloid back page. The most-slated player gets the splash: a pun headline in heavy condensed caps over a halftone print of his club's shirt, a byline crediting the subreddit and the comment count, a one-line deck, and the share in big verdict-coloured figures. Everyone else gets an inside-page strap. The material is newsprint and ink: a cool grey ground, black type, thick black rules, and colour only where a verdict is being called.\n\nIt is loud on purpose and honest on purpose. The voice is terrace slang and tabloid puns, but every figure is printed with the number of comments it rests on, and every verdict leads to the comments behind it. The density is a sports page read one-handed on a phone: one splash, three straps, the comments, then the full table, with a black section bar always under the thumb.\n\nThe world refuses the stats-app arrangement of avatar cards and widget dashboards, and it refuses anything that looks official: no league or FPL crests, kits, sponsor marks, colours or fonts. A club is a plain jersey in its home colours.",
+    "keyCharacteristics": [
+      "Cool newsprint ground, black ink, and a ladder of black rules (4px, 2px, 1px).",
+      "One tabloid red for the masthead and every hated or sell verdict; green for loved and buy; yellow for hold and the LIVE flash.",
+      "Anton caps for headlines and figures, Source Serif 4 for decks, body and comments, Archivo Narrow caps for straps, bylines and labels.",
+      "Halftone prints of the club's plain jersey behind display type.",
+      "Square corners, flat surfaces, no shadows for depth.",
+      "Phone first; pages, not modals; every view has its own hash address."
+    ],
+    "rules": [
+      {
+        "name": "The Verdict Ink Rule",
+        "body": "Red is hated or sell, green is loved or buy, yellow is hold, grey is neutral. A red, green or yellow mark on content is always a verdict, and a verdict always takes its own ink; no other meaning borrows these colours.",
+        "section": "colors"
+      },
+      {
+        "name": "The Masthead and Flash Rule",
+        "body": "Outside verdicts, red appears only as the masthead band, and yellow only as the LIVE flash and the state highlighter (focus, selection, current section, hover fill). Everything else is ink on newsprint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Home Colours Rule",
+        "body": "Club colours are data, not palette. They appear only on a club's own marks: its plain jersey, the halftone print of that jersey, its name band on the club map and its chip in a page tagline, with ink or white type picked by the colour's lightness. Never as a page accent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Headline Is the Verdict Rule",
+        "body": "A headline is written from the verdict as a pun on the player's surname (\"Taxi for Dedic\", \"Rice? On your bike\"), a new one each gameweek. Never a neutral label like \"Most hated player\".",
+        "section": "typography"
+      },
+      {
+        "name": "The Byline Rule",
+        "body": "Credits sit under the headline as a byline in label caps: subreddit · comment count · gameweek. Nothing labels a headline from above.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fit, Never Cut Rule",
+        "body": "Display names and box names shrink toward a floor (44px for the splash, 36px for a page name, 9px in a map box) and are never truncated or ellipsised. In a map box, a name that cannot fit at its floor is not printed.",
+        "section": "typography"
+      },
+      {
+        "name": "The Thumb Bar Rule",
+        "body": "The four sections (Back page, Clubs, Archive, Team) are always one tap away: under the thumb on phones, sticky at the top from 900px.",
+        "section": "layout"
+      },
+      {
+        "name": "The Page, Not Modal Rule",
+        "body": "Every view has its own hash address (`#`, `#gwN`, `#pN`, `#clubs`, `#club-XXX`, `#archive`, `#team`). A player or a club opens as a page with a back link, never as a modal.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Newsprint Rule",
+        "body": "Nothing floats. When something needs separating it gets a black rule or the second paper tone, never a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Halftone Print Rule",
+        "body": "A display head (the splash, a player or club page name, an archived back page) sits over one halftone print of the club's plain jersey: club-colour dots on a 2.3-unit grid in the 64-unit jersey, faded by a radial vignette and bleeding off the right edge at 50–55% opacity. White shirts print in their trim colour. On a page name the print sits under the last letters. One print per head, never behind body text.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "0px radius everywhere. Circles are reserved for the LIVE dot and the armband.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** print every figure with the number of comments it rests on, in label caps beside or under it (\"of 314 comments\").",
+      "**Do** write each headline from the verdict as a pun on the surname, and credit it underneath with a byline: subreddit · comments · gameweek.",
+      "**Do** give a verdict its own ink wherever it appears: the fill for pills, bars and kit strips, the text ink (#b80f15 for hated and sell, #1c7a38 for loved and buy, ink for hold) for figures and verdict words.",
+      "**Do** separate with black rules: 4px between page parts and above section heads, 2px around boxes and controls, 1px hairline between rows.",
+      "**Do** put one halftone print of the club's plain jersey behind each display head, faded off to the right, with the paper knockout on the type.",
+      "**Do** fit names down to their floor or leave them out, and fold unnamed players on a map into one \"+N more\" box.",
+      "**Do** design at 390px first: the splash headline at about 90px, the section bar under the thumb."
+    ],
+    "donts": [
+      "**Don't** put red, green or yellow on anything that is not a verdict, the masthead, the LIVE flash or a focus, selection, hover or current state. Chrome is ink: no red tab rules, no red hover fills, no red word in a loved or bought headline.",
+      "**Don't** use anything official: no Premier League or FPL crests, logos, player photos, kit designs, sponsor marks, the league's colours or its fonts. A club is a plain jersey in its home colours.",
+      "**Don't** put a label line above a headline (eyebrow, kicker, section tag). A player's first name over his surname is part of the name; a back link or a mini masthead band is navigation.",
+      "**Don't** truncate a name with an ellipsis or cut it at a box edge.",
+      "**Don't** open a player or a club in a modal.",
+      "**Don't** round corners or add drop shadows for depth; the only circles are the LIVE dot and the captain's armband.",
+      "**Don't** fall back to the stats-app arrangement of avatar cards and widget tiles. A player is his surname and his jersey; a gameweek is a back page."
+    ]
+  }
+}

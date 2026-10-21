@@ -1,0 +1,64 @@
+# Every 15 minutes: read new comments, ask Jev about each player they name, save the counts on the `data`
+# branch and publish the site to GitHub Pages. Runs never overlap; a failed run saves nothing, so the next
+# one reads the same comments again.
+name: Update
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the saved counts
+        run: git clone --quiet --depth 1 --branch data "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" state || mkdir state
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Read new comments and label them
+        env:
+          JEV_API_KEY: ${{ secrets.JEV_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          REDDIT_USER_AGENT: ${{ secrets.REDDIT_USER_AGENT }}
+        run: python update.py --state state --site site
+
+      - name: Save the counts
+        working-directory: state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -d .git ]; then
+            git init --quiet --initial-branch data
+            git remote add origin "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          fi
+          git add --all
+          # one commit, replaced every run, so the branch never grows a history
+          if git rev-parse --quiet --verify HEAD >/dev/null; then git commit --quiet --amend -m "Counts"; else git commit --quiet -m "Counts"; fi
+          git push --quiet --force origin data
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4
